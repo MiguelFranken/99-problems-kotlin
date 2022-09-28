@@ -1,5 +1,6 @@
 package com.github.miguelfranken.lists
 
+import com.github.miguelfranken.common.assertThrows
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
@@ -13,7 +14,6 @@ class P01Test {
 
     @Test
     fun `last element in empty list`() {
-        val exception = assertFails { last(listOf<Int>()) }
-        assertTrue(exception is NoSuchElementException)
+        assertThrows<NoSuchElementException> { last(listOf<Int>()) }
     }
 }
